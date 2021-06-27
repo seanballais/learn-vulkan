@@ -1,4 +1,4 @@
-CFLAGS = -std=c++17
+CFLAGS = -std=c++17 -g
 LDFLAGS = `pkg-config --static --libs glfw3` -lvulkan
 
 hello-triangle: hello_triangle.cpp
