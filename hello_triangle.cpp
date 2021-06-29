@@ -289,7 +289,7 @@ private:
       }
 
       VkBool32 isPresentSupportAvailable = false;
-      vkGetPhysicalDeviceSurfaceSupportKHR(m_physicalDevice, i, m_surface,
+      vkGetPhysicalDeviceSurfaceSupportKHR(device, i, m_surface,
                                            &isPresentSupportAvailable);
 
       if (isPresentSupportAvailable) {
