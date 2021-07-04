@@ -2,6 +2,7 @@ CFLAGS = -std=c++17 -g
 LDFLAGS = `pkg-config --static --libs glfw3` -lvulkan
 
 hello-triangle: hello_triangle.cpp
+	./compile_shaders.sh
 	clang++-11 $(CFLAGS) -o bin/hello_triangle hello_triangle.cpp $(LDFLAGS)
 
 .PHONY: test clean
