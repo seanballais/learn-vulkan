@@ -1,14 +1,16 @@
 CFLAGS = -std=c++17 -g
 LDFLAGS = `pkg-config --static --libs glfw3` -lvulkan
+SOURCES = main.cpp app.cpp utils/io.cpp utils/vk.cpp
 
-hello-triangle: hello_triangle.cpp
+vk-app:
+	mkdir -p bin/
 	./compile_shaders.sh
-	clang++-11 $(CFLAGS) -o bin/hello_triangle hello_triangle.cpp $(LDFLAGS)
+	clang++-11 $(CFLAGS) -o bin/vk-app $(SOURCES) $(LDFLAGS)
 
 .PHONY: test clean
 
-run: vk-test
-	./bin/hello_triangle
+run:
+	./bin/vk-app
 
 clean:
-	rm -rf ./bin/hello_triangle
+	rm -rf ./bin/vk-app
